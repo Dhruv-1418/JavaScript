@@ -7,7 +7,7 @@
 
 let arr = [1,2,3,4,5,6,0,7];
 
-arr.unshift("staring");// [ 'staring', 1, 2, 3, 4, 5, 6, 0, 7 ] -> starting point add.
+arr.unshift("starting");// [ 'starting', 1, 2, 3, 4, 5, 6, 0, 7 ] -> starting point add.
 console.log(arr);
 
 arr.shift();// [1,2,3,4,5,6,0,7] ->  starting point remove.
