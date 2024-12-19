@@ -102,26 +102,97 @@ remove()
 // Hint: Use Set or a loop.
 
 //use Set
-function removeDuplicates(phoneNumbers) {
-    return [...new Set(phoneNumbers)];
+phone_numbers = [9876543210, 9123456789, 9876543210, 9000000000];
+phone_numbers = [new Set(phone_numbers)];
+console.log(phone_numbers);
+
+
+
+// 9.Find Second Largest Sale Amount:
+// A shop recorded sales amounts: [200, 400, 100, 700, 500]. Write a function to find the second-largest sale.
+// Hint: Sort the array or find the largest, then exclude it.
+
+function sales(){
+let sales = [200, 400, 100, 700, 500];
+sales.sort((a, b) => b - a);
+console.log(sales[1]);
 }
-removeDuplicates()
-const phoneNumbers = [9876543210, 9123456789, 9876543210, 9000000000];
-console.log(removeDuplicates(phoneNumbers)); 
+sales();
 
-//use loop
-// function removeDuplicatess(phoneNumberss) {
-//     const uniqueNumbers = [];
-//     for (let number of phoneNumberss) {
-//         if (!uniqueNumbers.includes(number)) {
-//             uniqueNumbers.push(number);
-//         }
-//     }
-//     return uniqueNumbers;
-// }
-// removeDuplicatess()
 
-// // Example usage:
-// const phoneNumberss = [9876543210, 9123456789, 9876543210, 9000000000];
-// console.log(removeDuplicates(phoneNumberss)); 
-// // Output: [9876543210, 9123456789, 9000000000]
+// 10.Get the Last Product Sold:
+// A store records product sales as ["Shoes", "T-shirt", "Hat"]. Write a function to get the last product sold.
+// Hint: Access the last array element.
+
+function sal(){
+const sal = ["Shoes", "T-shirt", "Hat"];
+const lastProduct = sal[sal.length - 1];
+console.log("Last product sold:", lastProduct);
+}
+sal()
+
+
+// 11.Check if Shopping Cart is Empty:
+// Write a function to check if the shopping cart array cart = [] is empty.
+// Hint: Check if the length is 0.
+
+function cart(){
+let cart = [];
+console.log(cart.length);
+}
+cart()
+
+// 12.Count Occurrences of an Item:
+// A library has multiple copies of books in its inventory: ["Book A", "Book B", "Book A", "Book C", "Book A"]. Write a function to count how many times "Book A" appears.
+// Hint: Use a loop or filter().
+
+function inventory(){
+let inventory = ["Book A", "Book B", "Book A", "Book C", "Book A"];
+let result4 = inventory.filter((element) => {
+  return element == "Book A";
+});
+console.log(result4.length);
+}
+inventory()
+
+
+// 13.Merge Two Student Lists:
+// Two classes have student lists: ["Rahul", "Neha"] and ["Aman", "Priya"]. Write a function to merge both lists.
+// Hint: Use .concat() or spread operator.
+
+function two(){
+let student1 = ["Rahul", "Neha"];
+let student2 = ["Aman", "Priya"];
+
+let student3 = student1.concat(student2);
+console.log(student3);
+}
+two()
+
+
+// 14.Find the Position of a Movie:
+// A list of movies is ["Inception", "Avatar", "Titanic"]. Write a function to find the position of "Avatar" in the list.
+// Hint: Use .indexOf().
+
+function movies(){
+let movies = ["Inception", "Avatar", "Titanic"];
+console.log(movies.indexOf("Avatar"));
+}
+movies()
+
+
+
+// 15.Multiply All Prices by Discount:
+// A store wants to apply a 10% discount to all prices: [1000, 2000, 1500, 2500]. Write a function to return new prices after applying the discount.
+// Hint: Multiply each price by 0.9.
+
+function prices(){
+let prices = [1000, 2000, 1500, 2500];
+let result5 = prices.map((element) => {
+  return element * 0.9;
+});
+console.log(result5);
+}
+prices()
+
+
