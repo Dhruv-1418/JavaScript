@@ -196,3 +196,169 @@ console.log(result5);
 prices()
 
 
+
+//16. Sort Scores in Descending Order:
+// A sports team scored [10, 50, 30, 20]. Write a function to sort these scores in descending order without using .sort().
+// Hint: Use nested loops for sorting.
+
+function sortScoresDescending(scores) {
+    let n = scores.length;
+  
+    for (let i = 0; i < n; i++) {
+      for (let j = 0; j < n - i - 1; j++) {
+        if (scores[j] < scores[j + 1]) {
+          let temp = scores[j];
+          scores[j] = scores[j + 1];
+          scores[j + 1] = temp;
+        }
+      }
+    }
+    return scores;
+  }
+  
+  let scores1 = [10, 50, 30, 20];
+  let sortedScores = sortScoresDescending(scores1);
+  
+  console.log(sortedScores);
+  
+  // 17.Split Attendees into Groups:
+  // An event has 10 attendees: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]. Write a function to split them into groups of 3.
+  // Hint: Loop and use slice().
+  
+  const attendees = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
+  let groups = [];
+  let group = [];
+  
+  for (let i = 0; i < attendees.length; i++) {
+    group.push(attendees[i]);
+  
+    if (group.length === 3) {
+      groups.push(group);
+      group = [];
+    }
+  }
+  
+  if (group.length > 0) {
+    groups.push(group);
+  }
+  
+  //18. console.log(groups);
+  
+  // Rotate the Line of Cars:
+  // A parking lot has cars in a line: ["Car1", "Car2", "Car3", "Car4"]. Write a function to rotate the cars so "Car4" comes to the front.
+  // Hint: Use .pop() and .unshift()
+  
+  let car = ["Car1", "Car2", "Car3", "Car4"];
+  car.pop();
+  car.unshift("car4");
+  console.log(car);
+  
+  // 19.Remove Unwanted Values from the List:
+  // A form received some invalid values: [0, "A", "", null, "B", undefined]. Write a function to remove all falsey values (like 0, null, undefined) from the list.
+  // Hint: Use .filter().
+  
+  let values = [0, "A", "", null, "B", undefined];
+  
+  let result6 = values.filter((element) => {
+    return element;
+  });
+  
+  console.log(result6);
+  
+  // 20.Count Vowels in a Name:
+  // A user enters their name "Rahul". Write a function to count how many vowels are in the name.
+  // Hint: Check for vowels (a, e, i, o, u).
+  
+  let vowels = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+  ];
+  
+  let result7 = vowels.filter((element) => {
+    if (
+      element == "a" ||
+      element == "e" ||
+      element == "i" ||
+      element == "o" ||
+      element == "u"
+    ) {
+      return element;
+    }
+  });
+  
+  console.log(result7, result7.length);
+  
+  // 21.Reverse a Product Code:
+  // A company has a product code "AB1234". Write a function to reverse this code.
+  // Hint: Convert to array, reverse, and join.
+  
+  let string = "AB1234";
+  let string2 = string.split("");
+  console.log(string2);
+  console.log(string2.reverse());
+  console.log(string2.join("0"));
+  
+  //22 Check if a Name is a Palindrome:
+  // A child enters the name "radar" into a game. Write a function to check if the name is a palindrome (same forwards and backwards).
+  // Hint: Compare string to its reverse.
+  // Function to check if a name is a palindrome
+  function isPalindrome(name) {
+    name = name.toLowerCase();
+  
+    for (let i = 0; i < name.length / 2; i++) {
+      if (name[i] !== name[name.length - 1 - i]) {
+        return false;
+      }
+    }
+  
+    return true;
+  }
+  
+  let name = "radar";
+  if (isPalindrome(name)) {
+    console.log(`${name} is a palindrome!`);
+  } else {
+    console.log(`${name} is not a palindrome.`);
+  }
+  
+  //23.Remove Spaces from a Message:
+  // A user enters a message "Hello World 2024". Write a function to remove all spaces from the message.
+  // Hint: Use .replace() or .split() and .join().
+  let message = "Hello World 2024";
+  
+  let finalResult = message.split("").join("-");
+  
+  console.log(finalResult);
+  
+  // 24.Convert a Sentence to Words:
+  // A sentence "JavaScript is fun" is given. Write a function to convert the sentence into an array of words.
+  // Hint: Use .split() with a space.
+  
+  let messages = "javascript is fun";
+  console.log(messages.split(""));
+
+
