@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2 id="slider"></h2>
+    <img id="" src="" alt="" />
+    <button id="back">back</button>
+    <button id="next">next</button>
+
+    <script>
+      let array = [
+        "Dhruv",
+        "Jay",
+        "Smit",
+        "Arpit",
+        "Raj",
+        "Om",
+        "Harsh",
+        "Hardik",
+      ];
+
+      let slider = document.getElementById("slider");
+      let back = document.getElementById("back");
+      let next = document.getElementById("next");
+      let count = 0;
+
+      next.addEventListener("click", nextSlide);
+      back.addEventListener("click", previousSlide);
+
+      function nextSlide() {
+        if (count == array.length - 1) {
+          count = 0;
+        } else {
+          count++;
+        }
+        showData();
+      }
+
+      function previousSlide() {
+        if (count == 0) {
+          count = array.length - 1;
+        } else {
+          count--;
+        }
+        showData();
+      }
+
+      function showData() {
+        slider.innerText = array[count];
+        slider.style.color = "red";
+        // image.src = array[count]
+      }
+
+    //   setInterval(nextSlide, 2000);
+
+      showData();
+    </script>
+  </body>
+</html>
