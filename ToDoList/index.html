@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter Your task" name="" id="text">
+    <button id="add">add</button>
+    <div id="container"></div>
+    <script>
+        let todolist = JSON.parse(localStorage.getItem("todoData")) || [];
+        // let todolist = []
+        let text = document.getElementById("text");//catch data karva
+        let add = document.querySelector("#add");
+        let container = document.getElementById("container")
+
+        add.addEventListener("click", () => {
+            if(text.value == ""){
+                alert("Please enter a task");//alert message pass karva
+                return;//
+            }
+            console.log(text.value);//value get karva 
+            todolist.push(text.value);//array ma value push karva 
+            localStorage.setItem("todoData", JSON.stringify(todolist));
+            showData()
+            console.log(todolist);
+            text.value = "";
+        });
+
+
+
+        function showData(){
+            container.innerHTML="";//juno data remove karva
+            todolist.forEach((element,index)=>{
+                let card = document.createElement("div")
+                let para = document.createElement("p")
+                para.innerText = element
+
+                card.append(para)//paragraph lava mate
+
+                container.append(card)
+            })
+        }
+        showData()
+    </script>
+    
+</body>
+</html>
