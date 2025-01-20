@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+  
+    <form action="">
+      Email
+      <input
+        id="email"
+        type="text"
+        placeholder="Email "
+        onblur="emailValidation()"
+      />
+      <p id="error1"></p>
+      Password
+      <input
+        id="password"
+        type="text"
+        placeholder="enter password"
+    
+        onkeyup="passwordValidation()"
+      />
+      <p id="error2"></p>
+      <button id="btn" type="button">Submit</button>
+    </form>
+    <script>
+      let error1 = document.getElementById("error1");
+      let error2 = document.getElementById("error2");
+      function emailValidation() {
+        // console.log("hello world")
+        let email = document.getElementById("email");
+
+        if (email.value == "") {
+          error1.innerText = "Please enter a valid email address";
+          error1.style.color = "red";
+        } else {
+          error1.innerText = "";
+        }
+      }
+      function passwordValidation() {
+        // console.log("hello world")
+        let password = document.getElementById("password");
+
+        if (password.value == "") {
+          //password.length >= 7
+          error2.innerText = "Please enter a valid password";
+          error2.style.color = "red";
+        } else {
+          error2.innerText = "";
+        }
+      }
+//onblur
+      let btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {});
+    </script>
+  </body>
+</html>

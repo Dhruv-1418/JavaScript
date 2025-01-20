@@ -1,0 +1,40 @@
+<!-- Introduction Of JSON
+Store data in local Storage
+View data from local Storage -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JSON "javascript object notation"</h1>
+    <p id="text"></p>
+    <button id="btn">clear local Storage</button>
+    <script>
+      let text = document.querySelector("#text");
+      localStorage.setItem("name", "batman");
+      localStorage.setItem("age", 35);
+      let object = {
+        name: "batman",
+        age: 35,
+        city: "Gotham",
+        power: "money",
+      };
+      localStorage.setItem("data", JSON.stringify(object));
+      let btn = document.querySelector("#btn");
+
+      btn.addEventListener("click", () => {
+        localStorage.removeItem("age");
+
+        let data = JSON.parse(localStorage.getItem("data"))
+        console.log(data);
+      });
+      let storeData = localStorage.getItem("name");
+      console.log(storeData);
+      text.innerText = storeData;
+    </script>
+  </body>
+</html>
