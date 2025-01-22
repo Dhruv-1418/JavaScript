@@ -79,11 +79,67 @@ function Wallet(ownerName, balance, currency) {
 
 
 
+// (4)City Weather Tracker:
+// Question: Write a constructor function Weather that creates a weather object with properties like city, temperature, humidity, and forecast. Create a method to update the forecast. Hint: Use the constructor to set initial values, and add a method to update properties.
+
+
+function Weather(city, temperature, humidity, forecast) {
+    this.city = city;
+    this.temperature = temperature;
+    this.humidity = humidity;
+    this.forecast = forecast;
+  
+    this.updateForecast = function (newForecast) {
+      this.forecast = newForecast;
+      console.log(
+        `The forecast for ${this.city} has been updated to: ${this.forecast}`
+      );
+    };
+  
+    this.getWeatherDetails = function () {
+      console.log(
+        `City: ${this.city}, Temperature: ${this.temperature}°C, Humidity: ${this.humidity}%, Forecast: ${this.forecast}`
+      );
+    };
+  }
+  
+  const cityWeather = new Weather("New York", 25, 60, "Sunny");
+  cityWeather.getWeatherDetails();
+  cityWeather.updateForecast("Rainy");
+  cityWeather.getWeatherDetails();
 
 
 
 
 
+// (5)School Student Enrolment:
+// Question: Write a constructor function Student that generates a student object with properties name, rollNumber, grade, and subjects. Add a method to add new subjects to the student’s subject list. Hint: Use the new keyword to create each student, and add a method to modify the object’s state
+
+
+function Student(name, rollNumber, grade, subjects) {
+    this.name = name;
+    this.rollNumber = rollNumber;
+    this.grade = grade;
+    this.subjects = subjects;
+  
+    this.addSubject = function (newSubject) {
+      this.subjects.push(newSubject);
+      console.log(`Subject "${newSubject}" has been added for ${this.name}.`);
+    };
+  
+    this.getDetails = function () {
+      console.log(
+        `Name: ${this.name}, Roll Number: ${this.rollNumber}, Grade: ${
+          this.grade
+        }, Subjects: ${this.subjects.join(", ")}`
+      );
+    };
+  }
+  
+  const stud = new Student("John Doe", 101, "10th", ["Math", "Science"]);
+  stud.getDetails();
+  stud.addSubject("History");
+  stud.getDetails();
 
 
 
