@@ -13,6 +13,7 @@
       
       let btn = document.getElementById("btn");
       let container = document.getElementById("container");
+
       function ShowData() {
 
         container.innerHTML = "";
@@ -30,7 +31,7 @@
             img.style.height = "200px";
             container.append(img);
           })
-          
+
           .catch((error) => {
             console.log(error, "error");
           }).finally(()=>{
